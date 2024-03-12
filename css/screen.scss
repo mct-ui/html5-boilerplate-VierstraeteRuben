@@ -110,7 +110,7 @@ $breakpoints: (
 // Grid
 // ---
 
-$container-max-width: calc(1400 / $root-font-size * 1rem);
+$container-max-width: calc(1200 / $root-font-size * 1rem);
 
 // The gutter between columns
 $grid-gutter: $space-m;
@@ -183,6 +183,16 @@ h1 {
   font-weight: 700;
   margin-bottom: $space-m;
   line-height: calc($baseline * 5);
+
+  @include mq(bp1){
+    font-size: $ms9;
+    line-height: calc($baseline * 6);
+  }
+
+  @include mq(bp2){
+    font-size: $ms11;
+    line-height: calc($baseline*8);
+  }
 }
 
 h2 {
@@ -262,7 +272,30 @@ a:active {
 */
 
 .o-row {
+  padding: $space-m $space-m 0; //top rigt&left bottom
+  display: flow-root;
+
+  &--primary{
+    background-color: $color-primary;
+    color: white;
+    
+  }
+  &--dark{
+    background-color: $color-text;
+    color: white;
+  }
+  &--l{
+    @include mq(bp2){
+      padding: $space-xl $space-xl $space-m;
+    }
+  }
+
 }
+
+
+// .o-row--primary{
+//   background-color: $color-primary;  zelfde als &--primary{}
+// }
 
 /*
     Objects: Container
@@ -271,6 +304,9 @@ a:active {
 */
 
 .o-container {
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*
