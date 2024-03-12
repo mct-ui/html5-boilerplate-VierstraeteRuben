@@ -201,6 +201,14 @@ a:active {
 }
 
 /* gutter modifiers, these affect o-layout__item too */
+.o-layout--gutter {
+  margin: 0 -1rem;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 1rem;
+}
+
 /* reverse horizontal row modifier */
 .o-layout--row-reverse {
   flex-direction: row-reverse;
